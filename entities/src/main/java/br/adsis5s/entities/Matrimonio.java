@@ -7,12 +7,14 @@ public class Matrimonio {
 
 	private Pessoa pessoa1;
 	private Pessoa pessoa2;
-	private LocalDateTime dataHoraCelebracao;
+	private LocalDateTime dataCelebracao;
+
+	private LocalDateTime dataFinalizacao;
 
 	public Matrimonio(Pessoa pessoa1, Pessoa pessoa2) {
 		this.pessoa1 = pessoa1;
 		this.pessoa2 = pessoa2;
-		dataHoraCelebracao = LocalDateTime.now();
+		dataCelebracao = LocalDateTime.now();
 	}
 
 	public Pessoa getPessoa1() {
@@ -23,8 +25,24 @@ public class Matrimonio {
 		return pessoa2;
 	}
 
-	public LocalDateTime getDataHoraCelebracao() {
-		return dataHoraCelebracao;
+	public LocalDateTime getDataCelebracao() {
+		return dataCelebracao;
+	}
+
+	public LocalDateTime getDataFinalizacao() {
+		return dataFinalizacao;
+	}
+
+	public void finalizar() {
+		dataFinalizacao = LocalDateTime.now();
+	}
+
+	public void setDataCelebracao(LocalDateTime dataCelebracao) {
+		this.dataCelebracao = dataCelebracao;
+	}
+
+	public void setDataFinalizacao(LocalDateTime dataFinalizacao) {
+		this.dataFinalizacao = dataFinalizacao;
 	}
 
 	@Override
@@ -32,12 +50,12 @@ public class Matrimonio {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		Matrimonio that = (Matrimonio) o;
-		return Objects.equals(pessoa1, that.pessoa1) && Objects.equals(pessoa2, that.pessoa2) && Objects.equals(dataHoraCelebracao, that.dataHoraCelebracao);
+		return Objects.equals(pessoa1, that.pessoa1) && Objects.equals(pessoa2, that.pessoa2) && Objects.equals(dataCelebracao, that.dataCelebracao);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(pessoa1, pessoa2, dataHoraCelebracao);
+		return Objects.hash(pessoa1, pessoa2, dataCelebracao);
 	}
 
 	@Override
@@ -45,7 +63,7 @@ public class Matrimonio {
 		return "Matrimonio{" +
 				"pessoa1=" + pessoa1 +
 				", pessoa2=" + pessoa2 +
-				", dataHoraCelebracao=" + dataHoraCelebracao +
+				", dataHoraCelebracao=" + dataCelebracao +
 				'}';
 	}
 }

@@ -1,12 +1,11 @@
-package br.adsis5s.usecases.data.input;
+package br.adsis5s.interfaces.persistence;
 
 import java.util.Objects;
 
-public class CriarPessoaInput {
-
+public class PessoaPO {
 	private String nome;
 
-	public CriarPessoaInput(String nome) {
+	public PessoaPO(String nome) {
 		this.nome = nome;
 	}
 
@@ -22,8 +21,8 @@ public class CriarPessoaInput {
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
-		CriarPessoaInput that = (CriarPessoaInput) o;
-		return Objects.equals(nome, that.nome);
+		PessoaPO pessoaPO = (PessoaPO) o;
+		return Objects.equals(nome, pessoaPO.nome);
 	}
 
 	@Override
@@ -33,7 +32,7 @@ public class CriarPessoaInput {
 
 	@Override
 	public String toString() {
-		return "CriarPessoaInput{" +
+		return "PessoaPO{" +
 				"nome='" + nome + '\'' +
 				'}';
 	}

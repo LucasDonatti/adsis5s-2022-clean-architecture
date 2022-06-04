@@ -9,9 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>entities</artifactId>
+    <artifactId>interfaces-and-adapters</artifactId>
 
-    <name>entities</name>
+    <name>interfaces-and-adapters</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,6 +22,12 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>br.adsis5s</groupId>
+            <artifactId>use-cases</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
